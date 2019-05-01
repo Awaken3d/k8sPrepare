@@ -9,8 +9,9 @@ then
 	cd /tmp
 	wget https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh
 	chmod +x goinstall.sh
-	bash goinstall.sh --64 && source ~/.bashrc
+	bash goinstall.sh --64
 fi
+source ~/.bashrc
 cd ~
 
 if [[ -z $(git version) ]]
