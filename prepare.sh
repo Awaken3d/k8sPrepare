@@ -4,10 +4,13 @@ set -o errexit
 set -o nounset
 set -o xtrace
 
-cd /tmp
-wget https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh
-chmod +x goinstall.sh
-bash goinstall.sh
+if [[ -x $(go version) ]]
+then
+	cd /tmp
+	wget https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh
+	chmod +x goinstall.sh
+	bash goinstall.sh --64
+fi
 cd ~
 
 if [[ -x $(git version) ]]
